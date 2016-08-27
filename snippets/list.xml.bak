@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pack>
+    <snippet attachedevent="true" class="scripts.SceneEvents_0" classname="scripts.SceneEvents_0" desc="Scene Specific Events" description="Scene Specific Events" design="true" drawOrder="0" id="0" name="SceneEvents_0" oid="-1" package="scripts." sceneid="0" shared="false" type="scene">
+        <actor default="" defaultValue="" desc="" dropdown="" fullname="bone hover" hidden="false" id="1" name="_bonehover" order="0"/>
+        <blocks/>
+        <events>
+            <event displayName="Updating" enabled="true" id="2" name="step" order="2" repeats="true"/>
+            <event displayName="Click Add Bone Button" enabled="true" id="3" name="event-mouse-enter-exit-actor" order="3" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="0" attachedevent="true" class="scripts.ActorEvents_0" classname="scripts.ActorEvents_0" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="1" name="ActorEvents_0" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="Updating" enabled="true" id="1" name="step" order="1" repeats="true"/>
+            <event displayName="Created" enabled="true" id="3" name="init" order="3" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_2_2_4WayMovement" classname="scripts.Design_2_2_4WayMovement" desc="Allows the actor to move up, down, left and right." description="Allows the actor to move up, down, left and right." design="true" drawOrder="0" id="2" name="4 Way Movement" oid="-1" package="scripts" shared="false" type="actor">
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Down Control" hidden="false" id="32" name="_DownControl" order="8"/>
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Left Control" hidden="false" id="33" name="_LeftControl" order="9"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Right Control" hidden="false" id="34" name="_RightControl" order="10"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="Move X" hidden="true" id="38" name="_MoveX" order="1"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="Move Y" hidden="true" id="39" name="_MoveY" order="2"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the actor will not be able to turn while moving." dropdown="" fullname="Stop Turning" hidden="false" id="40" name="_StopTurning" order="13"/>
+        <number default="30.0" defaultValue="30.0" desc="The speed of the movement." dropdown="" fullname="Speed" hidden="false" id="11" name="_Speed" order="11"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Prefer X" hidden="true" id="44" name="_PreferX" order="3"/>
+        <boolean default="false" defaultValue="false" desc="If selected, the actor will stop moving if diagonal keys are pressed at the same.&lt;br /&gt;&#10;If unselected, the actor will move in the direction of the most recently pressed key." dropdown="" fullname="Diagonal Stop" hidden="false" id="45" name="_DiagonalStop" order="12"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the control attributes will be used to control the movement.&lt;br /&gt;&#10;If unselected, the control attributes are ignored and the movement can be controlled by triggering custom events.&lt;br /&gt;&#10;Trigger the events  &lt;var&gt;MoveUp&lt;/var&gt;, &lt;var&gt;MoveDown&lt;/var&gt;, &lt;var&gt;MoveLeft&lt;/var&gt; or &lt;var&gt;MoveRight&lt;/var&gt; to make the actor move as if the keys were pressed." dropdown="" fullname="Use Controls" hidden="false" id="46" name="_UseControls" order="6"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="X Idle" hidden="true" id="47" name="_XIdle" order="4"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Y Idle" hidden="true" id="49" name="_YIdle" order="5"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Up Animation (Idle)" hidden="false" id="50" name="_UpAnimationIdle" order="15"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Up Animation" hidden="false" id="51" name="_UpAnimation" order="16"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Down Animation (Idle)" hidden="false" id="52" name="_DownAnimationIdle" order="17"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Down Animation" hidden="false" id="53" name="_DownAnimation" order="18"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Left Animation (Idle)" hidden="false" id="54" name="_LeftAnimationIdle" order="19"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Left Animation" hidden="false" id="55" name="_LeftAnimation" order="20"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Right Animation (Idle)" hidden="false" id="56" name="_RightAnimationIdle" order="21"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Right Animation" hidden="false" id="57" name="_RightAnimation" order="22"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the animation attributes will be used, otherwise they will be ignored." dropdown="" fullname="Use Animations" hidden="false" id="58" name="_UseAnimations" order="14"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Up Control" hidden="false" id="31" name="_UpControl" order="7"/>
+        <blocks/>
+        <events>
+            <event displayName="Updated" enabled="true" id="3" name="step" order="3" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="4" name="event-custom" order="4" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="5" name="event-custom" order="5" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="6" name="event-custom" order="6" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="7" name="event-custom" order="7" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_3_3_CannotExitScene" classname="scripts.Design_3_3_CannotExitScene" desc="Prevent the actor from leaving the scene.&lt;br /&gt;&lt;br /&gt;&#10;The actor will still be able to leave the &lt;em&gt;screen&lt;/em&gt;, but it cannot leave the &lt;em&gt;scene&lt;/em&gt;." description="Prevent the actor from leaving the scene.&lt;br /&gt;&lt;br /&gt;&#10;The actor will still be able to leave the &lt;em&gt;screen&lt;/em&gt;, but it cannot leave the &lt;em&gt;scene&lt;/em&gt;." design="true" drawOrder="0" id="3" name="Cannot Exit Scene" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="Bottom" hidden="true" id="2" name="_Bottom" order="2"/>
+        <blocks/>
+        <events>
+            <event displayName="Updated" enabled="true" id="2" name="step" order="3" repeats="true"/>
+            <event displayName="Created" enabled="true" id="3" name="init" order="2" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_4_4_DrawTerrain" classname="scripts.Design_4_4_DrawTerrain" desc="Draw all terrain with custom fill and outline." description="Draw all terrain with custom fill and outline." design="true" drawOrder="0" id="4" name="Draw Terrain" oid="-1" package="scripts" shared="false" type="scene">
+        <number default="1.0" defaultValue="1.0" desc="The thickness of the outline to be drawn.&lt;br/&gt;&#10;Only used when &lt;var&gt;Outline&lt;/var&gt; is selected." dropdown="" fullname="Outline Thickness" hidden="false" id="2" name="_OutlineThickness" order="4"/>
+        <color default="153,51,0,255" defaultValue="153,51,0,255" desc="The color of the outline.&lt;br/&gt;&#10;Only used when &lt;var&gt;Outline&lt;/var&gt; is selected." dropdown="" fullname="Outline Color" hidden="false" id="3" name="_OutlineColor" order="5"/>
+        <color default="255,204,153,255" defaultValue="255,204,153,255" desc="The color to fill the terrain.&lt;br/&gt;&#10;Only used when &lt;var&gt;Fill&lt;/var&gt; is selected." dropdown="" fullname="Fill Color" hidden="false" id="4" name="_FillColor" order="2"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the terrain will be filled." dropdown="" fullname="Fill" hidden="false" id="5" name="_Fill" order="1"/>
+        <list default="list" defaultValue="list" desc="" dropdown="" fullname="Terrain List" hidden="true" id="6" name="_TerrainList" order="0"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the contour of the terrain will be drawn." dropdown="" fullname="Outline" hidden="false" id="7" name="_Outline" order="3"/>
+        <blocks>
+            <receiver blockID="715" id="1"/>
+            <receiver blockID="716" id="2"/>
+        </blocks>
+        <events>
+            <event displayName="Drawing" enabled="true" id="3" name="draw" order="5" repeats="true"/>
+            <event displayName="Import" enabled="true" id="5" name="event-custom-import" order="1" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_5_5_JumpandRunMovement" classname="scripts.Design_5_5_JumpandRunMovement" desc="Allows the actor to run and jump while on the ground." description="Allows the actor to run and jump while on the ground." design="true" drawOrder="0" id="5" name="Jump and Run Movement" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Left Control" hidden="false" id="33" name="_LeftControl" order="9"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Right Control" hidden="false" id="34" name="_RightControl" order="10"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="Move" hidden="true" id="37" name="_Move" order="1"/>
+        <boolean default="true" defaultValue="true" desc="If selected, the control attributes will be used to control the movement.&lt;br /&gt;&#10;If unselected, the control attributes are ignored and the movement can be controlled by triggering custom events. &#10;Trigger the events &lt;var&gt;MoveLeft&lt;/var&gt;, &lt;var&gt;MoveRight&lt;/var&gt;, or &lt;var&gt;Jump&lt;/var&gt; to make the actor move as if the keys were pressed." dropdown="" fullname="Use Controls" hidden="false" id="38" name="_UseControls" order="8"/>
+        <control default="" defaultValue="" desc="" dropdown="" fullname="Jump Control" hidden="false" id="41" name="_JumpControl" order="11"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Jump" hidden="true" id="42" name="_Jump" order="2"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="On Ground" hidden="true" id="43" name="_OnGround" order="5"/>
+        <number default="15.0" defaultValue="15.0" desc="The maximum speed at which the actor can run." dropdown="" fullname="Maximum Running Speed" hidden="false" id="11" name="_MaximumRunningSpeed" order="13"/>
+        <number default="25.0" defaultValue="25.0" desc="The force used for jumping." dropdown="" fullname="Jumping Force" hidden="false" id="45" name="_JumpingForce" order="14"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Run Right Animation" hidden="false" id="47" name="_RunRightAnimation" order="20"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Run Left Animation" hidden="false" id="48" name="_RunLeftAnimation" order="19"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Idle Right Animation" hidden="false" id="49" name="_IdleRightAnimation" order="18"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Idle Left Animation" hidden="false" id="50" name="_IdleLeftAnimation" order="17"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Jumping" hidden="true" id="52" name="_Jumping" order="6"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Jump Right Animation" hidden="false" id="53" name="_JumpRightAnimation" order="22"/>
+        <animation default="" defaultValue="" desc="" dropdown="" fullname="Jump Left Animation" hidden="false" id="54" name="_JumpLeftAnimation" order="21"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Facing Left" hidden="true" id="55" name="_FacingLeft" order="7"/>
+        <boolean default="false" defaultValue="false" desc="If selected, use the &lt;var&gt;Jump&lt;/var&gt; animations while falling, otherwise use the &lt;var&gt;Idle&lt;/var&gt; animations." dropdown="" fullname="Jump Animation When Falling" hidden="false" id="56" name="_JumpAnimationWhenFalling" order="23"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Jump Higher" hidden="true" id="57" name="_JumpHigher" order="4"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Was Jump" hidden="true" id="58" name="_WasJump" order="3"/>
+        <boolean default="false" defaultValue="false" desc="If selected, the jumping height will depend on how long the &lt;var&gt;Jump&lt;/var&gt; key is pressed." dropdown="" fullname="Variable Jump" hidden="false" id="60" name="_VariableJump" order="15"/>
+        <number default="0.2" defaultValue="0.2" desc="Holding down the jump key longer than this will not make the actor jump higher. Only used if &lt;var&gt;Variable Jump&lt;/var&gt; is selected." dropdown="" fullname="Variable Jump Duration" hidden="false" id="62" name="_VariableJumpDuration" order="16"/>
+        <number default="50" defaultValue="50" desc="The force used for running." dropdown="" fullname="Running Force" hidden="false" id="63" name="_RunningForce" order="12"/>
+        <blocks/>
+        <events>
+            <event displayName="Updated" enabled="true" id="3" name="step" order="3" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="4" name="event-custom" order="5" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="5" name="event-custom" order="6" repeats="true"/>
+            <event displayName="Custom Event" enabled="true" id="7" name="event-custom" order="7" repeats="true"/>
+            <event displayName="Actor - Any" enabled="true" id="8" name="collide" order="4" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="3" attachedevent="true" class="scripts.ActorEvents_3" classname="scripts.ActorEvents_3" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="6" name="ActorEvents_3" oid="-1" package="scripts." shared="false" type="actor">
+        <actor default="" defaultValue="" desc="" dropdown="" fullname="bone hover" hidden="false" id="1" name="_bonehover" order="0"/>
+        <blocks/>
+        <events>
+            <event displayName="On Actor" enabled="true" id="1" name="event-mouse-enter-exit-actor" order="1" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="5" attachedevent="true" class="scripts.ActorEvents_5" classname="scripts.ActorEvents_5" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="7" name="ActorEvents_5" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events/>
+    </snippet>
+    <snippet actorid="3" attachedevent="true" class="scripts.ActorEvents_7" classname="scripts.ActorEvents_7" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="8" name="ActorEvents_7" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events/>
+    </snippet>
+    <snippet attachedevent="false" class="scripts.Design_9_9_DragandDrop" classname="scripts.Design_9_9_DragandDrop" desc="Allows the actor to be dragged and dropped by the mouse." description="Allows the actor to be dragged and dropped by the mouse." design="true" drawOrder="0" id="9" name="Drag and Drop" oid="-1" package="scripts" shared="false" type="actor">
+        <actor default="thisactor" defaultValue="thisactor" desc="" dropdown="" fullname="Actor" hidden="true" id="2147483647" name="actor" order="0"/>
+        <boolean default="false" defaultValue="false" desc="" dropdown="" fullname="Grabbed" hidden="true" id="1" name="_Grabbed" order="1"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="X Offset" hidden="true" id="2" name="_XOffset" order="2"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="Y Offset" hidden="true" id="3" name="_YOffset" order="3"/>
+        <number default="0" defaultValue="0" desc="" dropdown="" fullname="Old X" hidden="true" id="4" name="_OldX" order="4"/>
+        <number default="0" defaultValue="0" desc="" dropdown="" fullname="Old Y" hidden="true" id="5" name="_OldY" order="5"/>
+        <boolean default="true" defaultValue="true" desc="If selected the actor cannot be dragged off screen." dropdown="" fullname="Cannot Exit Screen" hidden="false" id="6" name="_CannotExitScreen" order="6"/>
+        <blocks/>
+        <events>
+            <event displayName="Updated" enabled="true" id="2" name="step" order="3" repeats="true"/>
+            <event displayName="Drawing" enabled="true" id="3" name="draw" order="4" repeats="true"/>
+            <event displayName="Created" enabled="true" id="4" name="init" order="2" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="9" attachedevent="true" class="scripts.ActorEvents_9" classname="scripts.ActorEvents_9" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="10" name="ActorEvents_9" oid="-1" package="scripts." shared="false" type="actor">
+        <blocks/>
+        <events>
+            <event displayName="On Actor" enabled="true" id="1" name="event-mouse-enter-exit-actor" order="1" repeats="true"/>
+        </events>
+    </snippet>
+    <snippet actorid="11" attachedevent="true" class="scripts.ActorEvents_11" classname="scripts.ActorEvents_11" desc="Actor Specific Events" description="Actor Specific Events" design="true" drawOrder="0" id="11" name="ActorEvents_11" oid="-1" package="scripts." shared="false" type="actor">
+        <actor default="" defaultValue="" desc="" dropdown="" fullname="Stone ball actor" hidden="false" id="1" name="_Stoneballactor" order="0"/>
+        <blocks/>
+        <events>
+            <event displayName="On Actor" enabled="true" id="1" name="event-mouse-enter-exit-actor" order="1" repeats="true"/>
+        </events>
+    </snippet>
+</pack>

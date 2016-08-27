@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="1" id="0">
+        <event-mouse-enter-exit-actor comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <set-game-val-3 comment="false" x="26" y="42">
+                    <false comment="false" id="0" x="0" y="0"/>
+                </set-game-val-3>
+                <if comment="false" x="26" y="67">
+                    <group eventID="1" id="-1">
+                        <set-game-val-2 comment="false" x="37" y="97">
+                            <false comment="false" id="0" x="0" y="0"/>
+                        </set-game-val-2>
+                        <clear-filter comment="false" x="37" y="122">
+                            <ACTOR eid="this" id="0"/>
+                        </clear-filter>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-2 comment="false" id="0" x="0" y="0"/>
+                        <true comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+                <else comment="false" x="26" y="161">
+                    <group eventID="1" id="-1">
+                        <set-game-val-2 comment="false" x="37" y="181">
+                            <true comment="false" id="0" x="0" y="0"/>
+                        </set-game-val-2>
+                        <apply-filter comment="false" x="37" y="206">
+                            <ACTOR eid="this" id="0"/>
+                            <filter-negative comment="false" id="1" x="0" y="0"/>
+                        </apply-filter>
+                    </group>
+                </else>
+            </group>
+            <ACTOR eid="this" id="0"/>
+            <int id="1" val="2"/>
+        </event-mouse-enter-exit-actor>
+    </group>
+    <group eventID="1" id="-1"/>
+</groups>

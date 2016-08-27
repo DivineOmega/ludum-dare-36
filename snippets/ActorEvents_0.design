@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="1" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <if comment="false" x="26" y="40">
+                    <group eventID="1" id="-1">
+                        <set-game-val-3 comment="false" x="37" y="78">
+                            <false comment="false" id="0" x="0" y="0"/>
+                        </set-game-val-3>
+                    </group>
+                    <more comment="false" id="0" x="0" y="0">
+                        <get-xy comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="1"/>
+                        </get-xy>
+                        <scene-wh comment="false" id="1" x="0" y="0">
+                            <int id="0" val="1"/>
+                        </scene-wh>
+                    </more>
+                </if>
+                <if comment="false" x="26" y="115">
+                    <group eventID="1" id="-1">
+                        <toggle-grav comment="false" x="37" y="145">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                        </toggle-grav>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-3 comment="false" id="0" x="0" y="0"/>
+                        <true comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+                <else comment="false" x="26" y="184">
+                    <group eventID="1" id="-1">
+                        <toggle-grav comment="false" x="37" y="204">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="1"/>
+                        </toggle-grav>
+                        <setav comment="false" x="37" y="231">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                        </setav>
+                        <setvel comment="false" x="37" y="258">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                            <int id="2" val="0"/>
+                        </setvel>
+                        <set-xy comment="false" x="37" y="285">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="1"/>
+                            <int id="2" val="10"/>
+                        </set-xy>
+                        <set-xy comment="false" x="37" y="312">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                            <times comment="false" id="2" x="0" y="0">
+                                <scene-wh comment="false" id="0" x="0" y="0">
+                                    <int id="0" val="0"/>
+                                </scene-wh>
+                                <int id="1" val="0.5"/>
+                            </times>
+                        </set-xy>
+                    </group>
+                </else>
+            </group>
+        </step>
+    </group>
+    <group eventID="1" id="-1"/>
+    <group eventID="3" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="3" id="-1">
+                <ignore-screen-tolerance comment="false" x="26" y="40">
+                    <ACTOR eid="this" id="0"/>
+                </ignore-screen-tolerance>
+            </group>
+        </init>
+    </group>
+    <group eventID="3" id="-1"/>
+</groups>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups>
+    <group eventID="2" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <if comment="false" x="26" y="40">
+                    <group eventID="2" id="-1">
+                        <set-xy comment="false" x="37" y="70">
+                            <ACTOR eid="var" id="0" vid="1"/>
+                            <int id="1" val="0"/>
+                            <mousexy comment="false" id="2" x="0" y="0">
+                                <int id="0" val="0"/>
+                                <int id="1" val="0"/>
+                            </mousexy>
+                        </set-xy>
+                        <set-xy comment="false" x="37" y="110">
+                            <ACTOR eid="var" id="0" vid="1"/>
+                            <int id="1" val="1"/>
+                            <mousexy comment="false" id="2" x="0" y="0">
+                                <int id="0" val="0"/>
+                                <int id="1" val="1"/>
+                            </mousexy>
+                        </set-xy>
+                        <if comment="false" x="37" y="150">
+                            <group eventID="2" id="-1">
+                                <die comment="false" x="48" y="183">
+                                    <ACTOR eid="var" id="0" vid="1"/>
+                                </die>
+                                <create-actor3 comment="false" x="48" y="210">
+                                    <actortype eid="3" id="0"/>
+                                    <mousexy comment="false" id="1" x="0" y="0">
+                                        <int id="0" val="0"/>
+                                        <int id="1" val="0"/>
+                                    </mousexy>
+                                    <mousexy comment="false" id="2" x="0" y="0">
+                                        <int id="0" val="0"/>
+                                        <int id="1" val="1"/>
+                                    </mousexy>
+                                    <int id="3" val="0"/>
+                                </create-actor3>
+                                <set-game-val-0 comment="false" x="48" y="250">
+                                    <false comment="false" id="0" x="0" y="0"/>
+                                </set-game-val-0>
+                            </group>
+                            <mousestate comment="false" id="0" x="0" y="0">
+                                <int id="0" val="1"/>
+                            </mousestate>
+                        </if>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-0 comment="false" id="0" x="0" y="0"/>
+                        <true comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+            </group>
+        </step>
+    </group>
+    <group eventID="2" id="-1"/>
+    <group eventID="3" id="0">
+        <event-mouse-enter-exit-actor comment="false" x="7" y="23">
+            <group eventID="1" id="-1">
+                <set-game-val-3 comment="false" x="18" y="50">
+                    <false comment="false" id="0" x="0" y="0"/>
+                </set-game-val-3>
+                <if comment="false" x="18" y="75">
+                    <group eventID="1" id="-1">
+                        <set-game-val-0 comment="false" x="29" y="105">
+                            <true comment="false" id="0" x="0" y="0"/>
+                        </set-game-val-0>
+                        <create-actor3 comment="false" x="29" y="130">
+                            <actortype eid="7" id="0"/>
+                            <mousexy comment="false" id="1" x="0" y="0">
+                                <int id="0" val="0"/>
+                                <int id="1" val="0"/>
+                            </mousexy>
+                            <mousexy comment="false" id="2" x="0" y="0">
+                                <int id="0" val="0"/>
+                                <int id="1" val="1"/>
+                            </mousexy>
+                            <int id="3" val="0"/>
+                        </create-actor3>
+                        <set-val-0-1 comment="false" x="29" y="170">
+                            <ACTOR eid="lastcreated" id="0"/>
+                        </set-val-0-1>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-0 comment="false" id="0" x="0" y="0"/>
+                        <false comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+            </group>
+            <ACTOR eid="7" id="0"/>
+            <int id="1" val="2"/>
+        </event-mouse-enter-exit-actor>
+    </group>
+    <group eventID="3" id="-1"/>
+</groups>
