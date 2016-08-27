@@ -8,37 +8,55 @@
                         <set-xy comment="false" x="37" y="70">
                             <ACTOR eid="var" id="0" vid="1"/>
                             <int id="1" val="0"/>
-                            <mousexy comment="false" id="2" x="0" y="0">
-                                <int id="0" val="0"/>
-                                <int id="1" val="0"/>
-                            </mousexy>
+                            <minus comment="false" id="2" x="0" y="0">
+                                <mousexy comment="false" id="0" x="0" y="0">
+                                    <int id="0" val="0"/>
+                                    <int id="1" val="0"/>
+                                </mousexy>
+                                <times comment="false" id="1" x="0" y="0">
+                                    <get-wh comment="false" id="0" x="0" y="0">
+                                        <ACTOR eid="var" id="0" vid="1"/>
+                                        <int id="1" val="0"/>
+                                    </get-wh>
+                                    <int id="1" val="0.5"/>
+                                </times>
+                            </minus>
                         </set-xy>
-                        <set-xy comment="false" x="37" y="110">
+                        <set-xy comment="false" x="37" y="120">
                             <ACTOR eid="var" id="0" vid="1"/>
                             <int id="1" val="1"/>
-                            <mousexy comment="false" id="2" x="0" y="0">
-                                <int id="0" val="0"/>
-                                <int id="1" val="1"/>
-                            </mousexy>
-                        </set-xy>
-                        <if comment="false" x="37" y="150">
-                            <group eventID="2" id="-1">
-                                <die comment="false" x="48" y="183">
-                                    <ACTOR eid="var" id="0" vid="1"/>
-                                </die>
-                                <create-actor3 comment="false" x="48" y="210">
-                                    <actortype eid="3" id="0"/>
-                                    <mousexy comment="false" id="1" x="0" y="0">
-                                        <int id="0" val="0"/>
-                                        <int id="1" val="0"/>
-                                    </mousexy>
-                                    <mousexy comment="false" id="2" x="0" y="0">
-                                        <int id="0" val="0"/>
+                            <minus comment="false" id="2" x="0" y="0">
+                                <mousexy comment="false" id="0" x="0" y="0">
+                                    <int id="0" val="0"/>
+                                    <int id="1" val="1"/>
+                                </mousexy>
+                                <times comment="false" id="1" x="0" y="0">
+                                    <get-wh comment="false" id="0" x="0" y="0">
+                                        <ACTOR eid="var" id="0" vid="1"/>
                                         <int id="1" val="1"/>
-                                    </mousexy>
+                                    </get-wh>
+                                    <int id="1" val="0.5"/>
+                                </times>
+                            </minus>
+                        </set-xy>
+                        <if comment="false" x="37" y="170">
+                            <group eventID="2" id="-1">
+                                <create-actor3 comment="false" x="48" y="203">
+                                    <actortype eid="3" id="0"/>
+                                    <get-xy comment="false" id="1" x="0" y="0">
+                                        <ACTOR eid="var" id="0" vid="1"/>
+                                        <int id="1" val="0"/>
+                                    </get-xy>
+                                    <get-xy comment="false" id="2" x="0" y="0">
+                                        <ACTOR eid="var" id="0" vid="1"/>
+                                        <int id="1" val="1"/>
+                                    </get-xy>
                                     <int id="3" val="0"/>
                                 </create-actor3>
-                                <set-game-val-0 comment="false" x="48" y="250">
+                                <die comment="false" x="48" y="243">
+                                    <ACTOR eid="var" id="0" vid="1"/>
+                                </die>
+                                <set-game-val-0 comment="false" x="48" y="270">
                                     <false comment="false" id="0" x="0" y="0"/>
                                 </set-game-val-0>
                             </group>

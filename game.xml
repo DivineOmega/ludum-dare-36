@@ -4,6 +4,7 @@
         <e enabled="false" id="test"/>
         <e enabled="false" id="test-native"/>
         <e enabled="false" id="label"/>
+        <e enabled="false" id="tileapi"/>
         <e enabled="false" id="test-flash"/>
     </exts>
     <scales>
