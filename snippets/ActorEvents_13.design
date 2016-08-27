@@ -26,4 +26,36 @@
         </init>
     </group>
     <group eventID="1" id="-1"/>
+    <group eventID="2" id="0">
+        <event-collide-actortotype comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <set-game-val-3 comment="false" x="26" y="47">
+                    <false comment="false" id="0" x="0" y="0"/>
+                </set-game-val-3>
+                <set-xy comment="false" x="26" y="72">
+                    <ACTOR eid="this" id="0"/>
+                    <int id="1" val="0"/>
+                    <randint comment="false" id="2" x="0" y="0">
+                        <get-wh comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="0"/>
+                        </get-wh>
+                        <minus comment="false" id="1" x="0" y="0">
+                            <scene-wh comment="false" id="0" x="0" y="0">
+                                <int id="0" val="0"/>
+                            </scene-wh>
+                            <get-wh comment="false" id="1" x="0" y="0">
+                                <ACTOR eid="this" id="0"/>
+                                <int id="1" val="0"/>
+                            </get-wh>
+                        </minus>
+                    </randint>
+                </set-xy>
+                <stop comment="false" x="26" y="122"/>
+            </group>
+            <ACTOR eid="this" id="0"/>
+            <actortype eid="0" id="1"/>
+        </event-collide-actortotype>
+    </group>
+    <group eventID="2" id="-1"/>
 </groups>

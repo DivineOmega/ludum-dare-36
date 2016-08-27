@@ -85,6 +85,17 @@ class ActorEvents_13 extends ActorScript
 		/* ======================== When Creating ========================= */
 		actor.setX(randomInt(Math.floor((actor.getWidth())), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
 		
+		/* ======================== Actor of Type ========================= */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled && sameAsAny(getActorType(0), event.otherActor.getType(),event.otherActor.getGroup()))
+			{
+				Engine.engine.setGameAttribute("simulation_on", false);
+				actor.setX(randomInt(Math.floor((actor.getWidth())), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
+				return;
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

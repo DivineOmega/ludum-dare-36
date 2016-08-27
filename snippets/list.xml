@@ -154,6 +154,7 @@
         <blocks/>
         <events>
             <event displayName="Created" enabled="true" id="1" name="init" order="1" repeats="true"/>
+            <event displayName="Actor - Type" enabled="true" id="2" name="event-collide-actortotype" order="2" repeats="true"/>
         </events>
     </snippet>
     <snippet attachedevent="false" class="scripts.Design_13_13_Wander" classname="scripts.Design_13_13_Wander" desc="Make the actor move around and wait randomly." description="Make the actor move around and wait randomly." design="true" drawOrder="0" id="13" name="Wander" oid="-1" package="scripts" shared="false" type="actor">
