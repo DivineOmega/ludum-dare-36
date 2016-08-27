@@ -12,6 +12,7 @@
         <actor a="0.0" aid="7" c="false" group="3" id="5" name="Bone Button 7" sx="1.0" sy="1.0" x="9" y="9" z="0"/>
         <actor a="0.0" aid="8" c="false" group="3" id="9" name="rotate_mode_button 8" sx="1.0" sy="1.0" x="9" y="81" z="0"/>
         <actor a="0.0" aid="9" c="false" group="3" id="11" name="play_button 9" sx="1.0" sy="1.0" x="9" y="155" z="0"/>
+        <actor a="0.0" aid="10" c="false" group="3" id="13" name="Dinosaur 10" sx="1.0" sy="1.0" x="251" y="342" z="0"/>
     </actors>
     <snippets/>
     <terrain/>
