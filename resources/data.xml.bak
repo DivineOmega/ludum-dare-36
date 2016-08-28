@@ -9,7 +9,7 @@
                 <prop id="3" list="0" val="0.0"/>
                 <prop id="4" list="0" val="0"/>
                 <prop id="5" list="0" val="0"/>
-                <prop id="6" list="0" val="true"/>
+                <prop id="6" list="0" val="false"/>
             </s>
         </snippets>
     </actor>
