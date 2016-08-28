@@ -22,6 +22,13 @@
                         </minus>
                     </randint>
                 </set-xy>
+                <setangle comment="false" x="26" y="90">
+                    <ACTOR eid="this" id="0"/>
+                    <randint comment="false" id="1" x="0" y="0">
+                        <int id="0" val="0"/>
+                        <int id="1" val="360"/>
+                    </randint>
+                </setangle>
             </group>
             <int id="0" val="reset_positions"/>
         </event-custom>
