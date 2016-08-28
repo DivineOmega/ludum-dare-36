@@ -69,39 +69,33 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_3 extends ActorScript
+class ActorEvents_15 extends ActorScript
 {
-	public var _bonehover:Actor;
+	public var _wanderpoint1:Float;
+	public var _wanderpoint2:Float;
 	
 	/* ========================= Custom Event ========================= */
 	public function _customEvent_reset_positions():Void
 	{
-		recycleActor(actor);
+		actor.setX(randomInt(Math.floor((actor.getWidth())), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
 	}
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
-		nameMap.set("bone hover", "_bonehover");
+		nameMap.set("wander_point_1", "_wanderpoint1");
+		_wanderpoint1 = 0.0;
+		nameMap.set("wander_point_2", "_wanderpoint2");
+		_wanderpoint2 = 0.0;
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* =========================== On Actor =========================== */
-		addMouseOverActorListener(actor, function(mouseState:Int, list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled && 3 == mouseState)
-			{
-				Engine.engine.setGameAttribute("simulation_on", false);
-				if((Engine.engine.getGameAttribute("rotate_mode_on") == true))
-				{
-					actor.rotate(Utils.RAD * (22.5));
-				}
-			}
-		});
+		/* ======================== When Creating ========================= */
+		_customEvent_reset_positions();
 		
 	}
 	

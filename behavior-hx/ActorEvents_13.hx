@@ -69,36 +69,86 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_3 extends ActorScript
+class ActorEvents_13 extends ActorScript
 {
-	public var _bonehover:Actor;
+	public var _wanderpoint1:Float;
+	public var _movingleft:Bool;
+	public var _wanderpoint2:Float;
 	
 	/* ========================= Custom Event ========================= */
 	public function _customEvent_reset_positions():Void
 	{
-		recycleActor(actor);
+		actor.setX(randomInt(Math.floor((actor.getWidth())), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
+		_wanderpoint1 = asNumber(randomInt(Math.floor((actor.getWidth())), Math.floor(actor.getX())));
+		propertyChanged("_wanderpoint1", _wanderpoint1);
+		_wanderpoint2 = asNumber(randomInt(Math.floor(actor.getX()), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
+		propertyChanged("_wanderpoint2", _wanderpoint2);
 	}
 	
 	
 	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
 		super(actor);
-		nameMap.set("bone hover", "_bonehover");
+		nameMap.set("wander_point_1", "_wanderpoint1");
+		_wanderpoint1 = 0.0;
+		nameMap.set("moving_left", "_movingleft");
+		_movingleft = false;
+		nameMap.set("wander_point_2", "_wanderpoint2");
+		_wanderpoint2 = 0.0;
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* =========================== On Actor =========================== */
-		addMouseOverActorListener(actor, function(mouseState:Int, list:Array<Dynamic>):Void
+		/* ======================== When Creating ========================= */
+		Engine.engine.setGameAttribute("simulation_on", false);
+		_customEvent_reset_positions();
+		
+		/* ======================== Actor of Type ========================= */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled && 3 == mouseState)
+			if(wrapper.enabled && sameAsAny(getActorType(0), event.otherActor.getType(),event.otherActor.getGroup()))
 			{
 				Engine.engine.setGameAttribute("simulation_on", false);
-				if((Engine.engine.getGameAttribute("rotate_mode_on") == true))
+				actor.getLastCollidedActor().setY(-50);
+				engine.allActors.reuseIterator = false;
+				for(actorOnScreen in engine.allActors)
 				{
-					actor.rotate(Utils.RAD * (22.5));
+					if(actorOnScreen != null && !actorOnScreen.dead && !actorOnScreen.recycled && actorOnScreen.isOnScreenCache)
+					{
+						actorOnScreen.shout("_customEvent_" + "reset_positions");
+					}
+				}
+				engine.allActors.reuseIterator = true;
+				return;
+			}
+		});
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((actor.getX() > _wanderpoint2))
+				{
+					_movingleft = true;
+					propertyChanged("_movingleft", _movingleft);
+					actor.growTo(-100/100, 100/100, 0.5, Quad.easeInOut);
+				}
+				if((actor.getX() < _wanderpoint1))
+				{
+					_movingleft = false;
+					propertyChanged("_movingleft", _movingleft);
+					actor.growTo(100/100, 100/100, 0.5, Quad.easeInOut);
+				}
+				if((_movingleft == true))
+				{
+					actor.setXVelocity(-3);
+				}
+				else
+				{
+					actor.setXVelocity(3);
 				}
 			}
 		});

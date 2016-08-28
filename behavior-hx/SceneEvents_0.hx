@@ -40,6 +40,7 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -69,36 +70,58 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_3 extends ActorScript
+class SceneEvents_0 extends SceneScript
 {
 	public var _bonehover:Actor;
+	public var _wanderpoint1:Float;
+	public var _wanderpoint2:Float;
 	
-	/* ========================= Custom Event ========================= */
-	public function _customEvent_reset_positions():Void
+	
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		recycleActor(actor);
-	}
-	
-	
-	public function new(dummy:Int, actor:Actor, dummy2:Engine)
-	{
-		super(actor);
+		super();
 		nameMap.set("bone hover", "_bonehover");
+		nameMap.set("wander_point_1", "_wanderpoint1");
+		_wanderpoint1 = 0.0;
+		nameMap.set("wander_point_2", "_wanderpoint2");
+		_wanderpoint2 = 0.0;
 		
 	}
 	
 	override public function init()
 	{
 		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				if((Engine.engine.getGameAttribute("new_bone") == true))
+				{
+					_bonehover.setX((getMouseX() - ((_bonehover.getWidth()) * 0.5)));
+					_bonehover.setY((getMouseY() - ((_bonehover.getHeight()) * 0.5)));
+					if(isMousePressed())
+					{
+						createRecycledActor(getActorType(3), _bonehover.getX(), _bonehover.getY(), Script.FRONT);
+						recycleActor(_bonehover);
+						Engine.engine.setGameAttribute("new_bone", false);
+					}
+				}
+			}
+		});
+		
 		/* =========================== On Actor =========================== */
-		addMouseOverActorListener(actor, function(mouseState:Int, list:Array<Dynamic>):Void
+		addMouseOverActorListener(getActor(7), function(mouseState:Int, list:Array<Dynamic>):Void
 		{
 			if(wrapper.enabled && 3 == mouseState)
 			{
 				Engine.engine.setGameAttribute("simulation_on", false);
-				if((Engine.engine.getGameAttribute("rotate_mode_on") == true))
+				if((Engine.engine.getGameAttribute("new_bone") == false))
 				{
-					actor.rotate(Utils.RAD * (22.5));
+					Engine.engine.setGameAttribute("new_bone", true);
+					createRecycledActor(getActorType(7), getMouseX(), getMouseY(), Script.FRONT);
+					_bonehover = getLastCreatedActor();
+					propertyChanged("_bonehover", _bonehover);
 				}
 			}
 		});
