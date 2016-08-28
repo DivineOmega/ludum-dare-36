@@ -3,9 +3,23 @@
     <group eventID="2" id="0">
         <step comment="false" x="15" y="15">
             <group eventID="2" id="-1">
-                <if comment="false" x="26" y="40">
+                <set-val-0-4 comment="false" x="26" y="40">
+                    <int id="0" val="0"/>
+                </set-val-0-4>
+                <actors-of-type3 comment="false" x="26" y="60">
                     <group eventID="2" id="-1">
-                        <set-xy comment="false" x="37" y="70">
+                        <set-val-0-4 comment="false" x="37" y="92">
+                            <plus comment="false" id="0" x="0" y="0">
+                                <get-val-0-4 comment="false" id="0" x="0" y="0"/>
+                                <int id="1" val="1"/>
+                            </plus>
+                        </set-val-0-4>
+                    </group>
+                    <actortype eid="3" id="0"/>
+                </actors-of-type3>
+                <if comment="false" x="26" y="134">
+                    <group eventID="2" id="-1">
+                        <set-xy comment="false" x="37" y="164">
                             <ACTOR eid="var" id="0" vid="1"/>
                             <int id="1" val="0"/>
                             <minus comment="false" id="2" x="0" y="0">
@@ -22,7 +36,7 @@
                                 </times>
                             </minus>
                         </set-xy>
-                        <set-xy comment="false" x="37" y="120">
+                        <set-xy comment="false" x="37" y="214">
                             <ACTOR eid="var" id="0" vid="1"/>
                             <int id="1" val="1"/>
                             <minus comment="false" id="2" x="0" y="0">
@@ -39,9 +53,9 @@
                                 </times>
                             </minus>
                         </set-xy>
-                        <if comment="false" x="37" y="170">
+                        <if comment="false" x="37" y="264">
                             <group eventID="2" id="-1">
-                                <create-actor3 comment="false" x="48" y="203">
+                                <create-actor3 comment="false" x="48" y="297">
                                     <actortype eid="3" id="0"/>
                                     <get-xy comment="false" id="1" x="0" y="0">
                                         <ACTOR eid="var" id="0" vid="1"/>
@@ -53,10 +67,10 @@
                                     </get-xy>
                                     <int id="3" val="0"/>
                                 </create-actor3>
-                                <die comment="false" x="48" y="243">
+                                <die comment="false" x="48" y="337">
                                     <ACTOR eid="var" id="0" vid="1"/>
                                 </die>
-                                <set-game-val-0 comment="false" x="48" y="270">
+                                <set-game-val-0 comment="false" x="48" y="364">
                                     <false comment="false" id="0" x="0" y="0"/>
                                 </set-game-val-0>
                             </group>
@@ -81,11 +95,20 @@
                     <false comment="false" id="0" x="0" y="0"/>
                 </set-game-val-3>
                 <if comment="false" x="18" y="75">
-                    <group eventID="1" id="-1">
-                        <set-game-val-0 comment="false" x="29" y="105">
+                    <group eventID="3" id="-1">
+                        <stop comment="false" x="29" y="105"/>
+                    </group>
+                    <moreeq comment="false" id="0" x="0" y="0">
+                        <get-val-0-4 comment="false" id="0" x="0" y="0"/>
+                        <int id="1" val="3"/>
+                    </moreeq>
+                </if>
+                <if comment="false" x="18" y="137">
+                    <group eventID="3" id="-1">
+                        <set-game-val-0 comment="false" x="29" y="167">
                             <true comment="false" id="0" x="0" y="0"/>
                         </set-game-val-0>
-                        <create-actor3 comment="false" x="29" y="130">
+                        <create-actor3 comment="false" x="29" y="192">
                             <actortype eid="7" id="0"/>
                             <mousexy comment="false" id="1" x="0" y="0">
                                 <int id="0" val="0"/>
@@ -97,7 +120,7 @@
                             </mousexy>
                             <int id="3" val="0"/>
                         </create-actor3>
-                        <set-val-0-1 comment="false" x="29" y="170">
+                        <set-val-0-1 comment="false" x="29" y="232">
                             <ACTOR eid="lastcreated" id="0"/>
                         </set-val-0-1>
                     </group>
@@ -112,4 +135,24 @@
         </event-mouse-enter-exit-actor>
     </group>
     <group eventID="3" id="-1"/>
+    <group eventID="4" id="0">
+        <draw comment="false" x="15" y="15">
+            <group eventID="4" id="-1">
+                <draw-text comment="false" x="26" y="40">
+                    <str-combine comment="false" id="0" x="0" y="0">
+                        <int id="0" val="Bones used:"/>
+                        <str-combine comment="false" id="1" x="0" y="0">
+                            <tostring comment="false" id="0" x="0" y="0">
+                                <get-val-0-4 comment="false" id="0" x="0" y="0"/>
+                            </tostring>
+                            <int id="1" val="/3"/>
+                        </str-combine>
+                    </str-combine>
+                    <int id="1" val="500"/>
+                    <int id="2" val="20"/>
+                </draw-text>
+            </group>
+        </draw>
+    </group>
+    <group eventID="4" id="-1"/>
 </groups>
