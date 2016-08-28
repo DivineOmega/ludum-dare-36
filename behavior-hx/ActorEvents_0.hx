@@ -109,6 +109,16 @@ class ActorEvents_0 extends ActorScript
 			}
 		});
 		
+		/* ======================== Something Else ======================== */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				startShakingScreen((event.thisActor.getYVelocity() * 0.10) / 100, 0.05);
+				return;
+			}
+		});
+		
 	}
 	
 	override public function forwardMessage(msg:String)

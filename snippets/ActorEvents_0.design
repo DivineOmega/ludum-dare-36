@@ -77,4 +77,22 @@
         </init>
     </group>
     <group eventID="3" id="-1"/>
+    <group eventID="4" id="0">
+        <collide comment="false" x="15" y="15">
+            <group eventID="4" id="-1">
+                <shake-start comment="false" x="26" y="45">
+                    <times comment="false" id="0" x="0" y="0">
+                        <get-dxy comment="false" id="0" x="0" y="0">
+                            <this-actor comment="false" id="0" x="0" y="0"/>
+                            <int id="1" val="1"/>
+                        </get-dxy>
+                        <int id="1" val="0.10"/>
+                    </times>
+                    <int id="1" val="0.05"/>
+                </shake-start>
+                <stop comment="false" x="26" y="88"/>
+            </group>
+        </collide>
+    </group>
+    <group eventID="4" id="-1"/>
 </groups>

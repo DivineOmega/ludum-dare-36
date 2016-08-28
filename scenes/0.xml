@@ -18,6 +18,10 @@
         <actor a="0.0" aid="13" c="false" group="3" id="15" name="Obstacle1 13" sx="1.0" sy="1.0" x="88" y="296" z="0"/>
         <actor a="0.0" aid="14" c="false" group="3" id="15" name="Obstacle1 14" sx="1.0" sy="1.0" x="189" y="227" z="0"/>
         <actor a="0.0" aid="15" c="false" group="3" id="15" name="Obstacle1 15" sx="1.0" sy="1.0" x="402" y="100" z="0"/>
+        <actor a="0.0" aid="16" c="false" group="3" id="15" name="Obstacle1 16" sx="1.0" sy="1.0" x="462" y="60" z="0"/>
+        <actor a="0.0" aid="17" c="false" group="3" id="15" name="Obstacle1 17" sx="1.0" sy="1.0" x="349" y="119" z="0"/>
+        <actor a="0.0" aid="18" c="false" group="3" id="15" name="Obstacle1 18" sx="1.0" sy="1.0" x="240" y="188" z="0"/>
+        <actor a="0.0" aid="19" c="false" group="3" id="15" name="Obstacle1 19" sx="1.0" sy="1.0" x="142" y="261" z="0"/>
     </actors>
     <snippets/>
     <terrain/>
