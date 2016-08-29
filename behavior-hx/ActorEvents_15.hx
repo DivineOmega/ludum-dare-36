@@ -40,7 +40,6 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
-import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -70,42 +69,34 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class SceneEvents_1 extends SceneScript
+class ActorEvents_15 extends ActorScript
 {
+	public var _wanderpoint1:Float;
+	public var _wanderpoint2:Float;
 	
-	
-	public function new(dummy:Int, dummy2:Engine)
+	/* ========================= Custom Event ========================= */
+	public function _customEvent_reset_positions():Void
 	{
-		super();
+		actor.setX(randomInt(Math.floor((actor.getWidth())), Math.floor(((getSceneWidth()) - (actor.getWidth())))));
+		actor.setAngle(Utils.RAD * (randomInt(Math.floor(0), Math.floor(360))));
+	}
+	
+	
+	public function new(dummy:Int, actor:Actor, dummy2:Engine)
+	{
+		super(actor);
+		nameMap.set("wander_point_1", "_wanderpoint1");
+		_wanderpoint1 = 0.0;
+		nameMap.set("wander_point_2", "_wanderpoint2");
+		_wanderpoint2 = 0.0;
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* ========================= When Drawing ========================= */
-		addWhenDrawingListener(null, function(g:G, x:Float, y:Float, list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled)
-			{
-				g.setFont(getFont(18));
-				g.drawString("" + "Uhg Machines", 140, 20);
-				g.setFont(getFont(17));
-				g.drawString("" + "Uhg smart.", 50, 250);
-				g.drawString("" + "Uhg make machines.", 50, 270);
-				g.drawString("" + "Uhg smash dinosaur with rock.", 50, 290);
-				g.drawString("" + "Click to start", 480, 400);
-			}
-		});
-		
-		/* ============================ Click ============================= */
-		addMousePressedListener(function(list:Array<Dynamic>):Void
-		{
-			if(wrapper.enabled)
-			{
-				switchScene(GameModel.get().scenes.get(0).getID(), createFadeOut(0.25, Utils.getColorRGB(0,0,0)), createFadeIn(0.25, Utils.getColorRGB(0,0,0)));
-			}
-		});
+		/* ======================== When Creating ========================= */
+		_customEvent_reset_positions();
 		
 	}
 	

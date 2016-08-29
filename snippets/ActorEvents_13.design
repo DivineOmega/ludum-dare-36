@@ -6,18 +6,22 @@
                 <set-game-val-3 comment="false" x="26" y="47">
                     <false comment="false" id="0" x="0" y="0"/>
                 </set-game-val-3>
-                <set-game-val-4 comment="false" x="26" y="72">
+                <play-sound4 comment="false" x="26" y="72">
+                    <int id="0" val="0"/>
+                    <sound eid="20" id="1"/>
+                </play-sound4>
+                <set-game-val-4 comment="false" x="26" y="99">
                     <int id="0" val="1"/>
                 </set-game-val-4>
-                <set-game-val-5 comment="false" x="26" y="92">
+                <set-game-val-5 comment="false" x="26" y="119">
                     <plus comment="false" id="0" x="0" y="0">
                         <get-game-val-5 comment="false" id="0" x="0" y="0"/>
                         <int id="1" val="1"/>
                     </plus>
                 </set-game-val-5>
-                <if comment="false" x="26" y="122">
+                <if comment="false" x="26" y="149">
                     <group eventID="2" id="-1">
-                        <set-game-val-6 comment="false" x="37" y="152">
+                        <set-game-val-6 comment="false" x="37" y="179">
                             <get-game-val-5 comment="false" id="0" x="0" y="0"/>
                         </set-game-val-6>
                     </group>
@@ -26,20 +30,20 @@
                         <get-game-val-6 comment="false" id="1" x="0" y="0"/>
                     </more>
                 </if>
-                <set-xy comment="false" x="26" y="189">
+                <set-xy comment="false" x="26" y="216">
                     <ACTOR eid="lastcollided" id="0"/>
                     <int id="1" val="1"/>
                     <int id="2" val="-50"/>
                 </set-xy>
-                <actors-on-screen comment="false" x="26" y="216">
+                <actors-on-screen comment="false" x="26" y="243">
                     <group eventID="2" id="-1">
-                        <shout comment="false" x="37" y="241">
+                        <shout comment="false" x="37" y="268">
                             <actor-on-screen comment="false" id="0" x="0" y="0"/>
                             <int id="1" val="reset_positions"/>
                         </shout>
                     </group>
                 </actors-on-screen>
-                <stop comment="false" x="26" y="285"/>
+                <stop comment="false" x="26" y="312"/>
             </group>
             <ACTOR eid="this" id="0"/>
             <actortype eid="0" id="1"/>

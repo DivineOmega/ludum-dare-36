@@ -40,7 +40,6 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
-import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -70,42 +69,59 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class SceneEvents_2 extends SceneScript
+class ActorEvents_0 extends ActorScript
 {
 	
 	
-	public function new(dummy:Int, dummy2:Engine)
+	public function new(dummy:Int, actor:Actor, dummy2:Engine)
 	{
-		super();
+		super(actor);
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* ========================= When Drawing ========================= */
-		addWhenDrawingListener(null, function(g:G, x:Float, y:Float, list:Array<Dynamic>):Void
+		/* ======================== When Creating ========================= */
+		actor.makeAlwaysSimulate();
+		
+		/* ======================== When Updating ========================= */
+		addWhenUpdatedListener(null, function(elapsedTime:Float, list:Array<Dynamic>):Void
 		{
 			if(wrapper.enabled)
 			{
-				g.setFont(getFont(18));
-				g.drawString("" + "Ugh failed!", 140, 20);
-				g.setFont(getFont(17));
-				g.drawString("" + (("" + "Ugh reach level ") + ("" + (("" + Engine.engine.getGameAttribute("levels_completed")) + ("" + ".")))), 50, 250);
-				g.drawString("" + (("" + "Highest level Ugh reach: ") + ("" + (("" + Engine.engine.getGameAttribute("highest_levels_completed")) + ("" + ".")))), 50, 270);
-				g.drawString("" + "Uhg try again!", 50, 290);
-				g.drawString("" + "Click to restart", 480, 400);
+				if((actor.getY() > (getSceneHeight())))
+				{
+					Engine.engine.setGameAttribute("simulation_on", false);
+					Engine.engine.setGameAttribute("attempts", (Engine.engine.getGameAttribute("attempts") + 1));
+				}
+				if((Engine.engine.getGameAttribute("simulation_on") == true))
+				{
+					actor.setIgnoreGravity(!true);
+				}
+				else
+				{
+					actor.setIgnoreGravity(!false);
+					actor.setAngularVelocity(Utils.RAD * (0));
+					actor.setVelocity(0, 0);
+					actor.setY(10);
+					actor.setX(((getSceneWidth()) * 0.5));
+				}
 			}
 		});
 		
-		/* ============================ Click ============================= */
-		addMousePressedListener(function(list:Array<Dynamic>):Void
+		/* ======================== Something Else ======================== */
+		addCollisionListener(actor, function(event:Collision, list:Array<Dynamic>):Void
 		{
 			if(wrapper.enabled)
 			{
-				Engine.engine.setGameAttribute("attempts", 1);
-				Engine.engine.setGameAttribute("levels_completed", 1);
-				switchScene(GameModel.get().scenes.get(1).getID(), createFadeOut(0.25, Utils.getColorRGB(0,0,0)), createFadeIn(0.25, Utils.getColorRGB(0,0,0)));
+				if((Engine.engine.getGameAttribute("simulation_on") == false))
+				{
+					return;
+				}
+				playSoundOnChannel(getSound(19), Std.int(0));
+				startShakingScreen((event.thisActor.getYVelocity() * 0.10) / 100, 0.05);
+				return;
 			}
 		});
 		

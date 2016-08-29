@@ -1,8 +1,9 @@
 #
-#Sun Aug 28 19:21:05 BST 2016
+#Mon Aug 29 23:20:27 BST 2016
 style=plain
 alphabet=
 color=\#000000
+stroke.color=\#000000
 shadow.y=0
 family=SansSerif
 shadow.x=0

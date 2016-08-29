@@ -37,12 +37,12 @@
                     <int id="2" val="270"/>
                 </draw-text>
                 <draw-text comment="false" x="26" y="184">
-                    <int id="0" val="Uhg try again!"/>
+                    <int id="0" val="Ugh try again!"/>
                     <int id="1" val="50"/>
                     <int id="2" val="290"/>
                 </draw-text>
                 <draw-text comment="false" x="26" y="204">
-                    <int id="0" val="Click to restart"/>
+                    <int id="0" val="Click to restart!"/>
                     <int id="1" val="480"/>
                     <int id="2" val="400"/>
                 </draw-text>

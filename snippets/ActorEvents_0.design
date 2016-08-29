@@ -86,7 +86,21 @@
     <group eventID="4" id="0">
         <collide comment="false" x="15" y="15">
             <group eventID="4" id="-1">
-                <shake-start comment="false" x="26" y="45">
+                <if comment="false" x="26" y="45">
+                    <group eventID="4" id="-1">
+                        <stop comment="false" x="37" y="75"/>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-3 comment="false" id="0" x="0" y="0"/>
+                        <false comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+                <play-sound-channel comment="false" x="26" y="107">
+                    <int id="0" val="0"/>
+                    <sound eid="19" id="1"/>
+                    <int id="2" val="0"/>
+                </play-sound-channel>
+                <shake-start comment="false" x="26" y="134">
                     <times comment="false" id="0" x="0" y="0">
                         <get-dxy comment="false" id="0" x="0" y="0">
                             <this-actor comment="false" id="0" x="0" y="0"/>
@@ -96,7 +110,7 @@
                     </times>
                     <int id="1" val="0.05"/>
                 </shake-start>
-                <stop comment="false" x="26" y="88"/>
+                <stop comment="false" x="26" y="177"/>
             </group>
         </collide>
     </group>

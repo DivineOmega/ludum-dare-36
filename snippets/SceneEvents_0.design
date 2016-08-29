@@ -160,7 +160,7 @@
                     <font eid="17" id="0"/>
                 </set-font-new>
                 <set-alpha comment="false" x="26" y="67">
-                    <int id="0" val="50"/>
+                    <int id="0" val="70"/>
                 </set-alpha>
                 <draw-text comment="false" x="26" y="87">
                     <str-combine comment="false" id="0" x="0" y="0">
