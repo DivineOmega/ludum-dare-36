@@ -40,6 +40,7 @@ import box2D.common.math.B2Vec2;
 import box2D.dynamics.B2Body;
 import box2D.dynamics.B2Fixture;
 import box2D.dynamics.joints.B2Joint;
+import box2D.collision.shapes.B2Shape;
 
 import motion.Actuate;
 import motion.easing.Back;
@@ -69,35 +70,42 @@ import com.stencyl.graphics.shaders.BloomShader;
 
 
 
-class ActorEvents_9 extends ActorScript
+class SceneEvents_2 extends SceneScript
 {
 	
 	
-	public function new(dummy:Int, actor:Actor, dummy2:Engine)
+	public function new(dummy:Int, dummy2:Engine)
 	{
-		super(actor);
+		super();
 		
 	}
 	
 	override public function init()
 	{
 		
-		/* =========================== On Actor =========================== */
-		addMouseOverActorListener(actor, function(mouseState:Int, list:Array<Dynamic>):Void
+		/* ========================= When Drawing ========================= */
+		addWhenDrawingListener(null, function(g:G, x:Float, y:Float, list:Array<Dynamic>):Void
 		{
-			if(wrapper.enabled && 3 == mouseState)
+			if(wrapper.enabled)
 			{
-				Engine.engine.setGameAttribute("simulation_on", false);
-				if((Engine.engine.getGameAttribute("rotate_mode_on") == true))
-				{
-					Engine.engine.setGameAttribute("rotate_mode_on", false);
-					actor.clearFilters();
-				}
-				else
-				{
-					Engine.engine.setGameAttribute("rotate_mode_on", true);
-					actor.setFilter([createNegativeFilter()]);
-				}
+				g.setFont(getFont(18));
+				g.drawString("" + "Ugh failed!", 140, 20);
+				g.setFont(getFont(17));
+				g.drawString("" + (("" + "Ugh reach level ") + ("" + (("" + Engine.engine.getGameAttribute("levels_completed")) + ("" + ".")))), 50, 250);
+				g.drawString("" + (("" + "Highest level Ugh reach: ") + ("" + (("" + Engine.engine.getGameAttribute("highest_levels_completed")) + ("" + ".")))), 50, 270);
+				g.drawString("" + "Ugh try again!", 50, 290);
+				g.drawString("" + "Click to restart!", 480, 400);
+			}
+		});
+		
+		/* ============================ Click ============================= */
+		addMousePressedListener(function(list:Array<Dynamic>):Void
+		{
+			if(wrapper.enabled)
+			{
+				Engine.engine.setGameAttribute("attempts", 1);
+				Engine.engine.setGameAttribute("levels_completed", 1);
+				switchScene(GameModel.get().scenes.get(1).getID(), createFadeOut(0.25, Utils.getColorRGB(0,0,0)), createFadeIn(0.25, Utils.getColorRGB(0,0,0)));
 			}
 		});
 		
