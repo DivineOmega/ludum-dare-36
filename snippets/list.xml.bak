@@ -4,7 +4,7 @@
         <actor default="" defaultValue="" desc="" dropdown="" fullname="bone hover" hidden="false" id="1" name="_bonehover" order="0"/>
         <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="wander_point_1" hidden="false" id="2" name="_wanderpoint1" order="1"/>
         <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="wander_point_2" hidden="false" id="3" name="_wanderpoint2" order="2"/>
-        <number default="0" defaultValue="0" desc="" dropdown="" fullname="num_bones" hidden="false" id="4" name="_numbones" order="3"/>
+        <number default="0.0" defaultValue="0.0" desc="" dropdown="" fullname="num_bones" hidden="false" id="4" name="_numbones" order="3"/>
         <blocks/>
         <events>
             <event displayName="Updating" enabled="true" id="2" name="step" order="3" repeats="true"/>

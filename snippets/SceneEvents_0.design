@@ -87,6 +87,15 @@
             </group>
         </step>
     </group>
+    <group eventID="2" id="4">
+        <if comment="false" x="365" y="80">
+            <group eventID="2" id="-1"/>
+            <more comment="false" id="0" x="0" y="0">
+                <get-game-val-5 comment="false" id="0" x="0" y="0"/>
+                <get-game-val-6 comment="false" id="1" x="0" y="0"/>
+            </more>
+        </if>
+    </group>
     <group eventID="2" id="-1"/>
     <group eventID="3" id="0">
         <event-mouse-enter-exit-actor comment="false" x="7" y="23">
@@ -138,9 +147,15 @@
     <group eventID="4" id="0">
         <draw comment="false" x="15" y="15">
             <group eventID="4" id="-1">
-                <draw-text comment="false" x="26" y="40">
+                <set-font-new comment="false" x="26" y="40">
+                    <font eid="17" id="0"/>
+                </set-font-new>
+                <set-alpha comment="false" x="26" y="67">
+                    <int id="0" val="50"/>
+                </set-alpha>
+                <draw-text comment="false" x="26" y="87">
                     <str-combine comment="false" id="0" x="0" y="0">
-                        <int id="0" val="Bones used:"/>
+                        <int id="0" val="Bones used: "/>
                         <str-combine comment="false" id="1" x="0" y="0">
                             <tostring comment="false" id="0" x="0" y="0">
                                 <get-val-0-4 comment="false" id="0" x="0" y="0"/>
@@ -148,9 +163,42 @@
                             <int id="1" val="/3"/>
                         </str-combine>
                     </str-combine>
-                    <int id="1" val="500"/>
+                    <int id="1" val="480"/>
                     <int id="2" val="20"/>
                 </draw-text>
+                <draw-text comment="false" x="26" y="127">
+                    <str-combine comment="false" id="0" x="0" y="0">
+                        <int id="0" val="Attempts: "/>
+                        <tostring comment="false" id="1" x="0" y="0">
+                            <get-game-val-4 comment="false" id="0" x="0" y="0"/>
+                        </tostring>
+                    </str-combine>
+                    <int id="1" val="480"/>
+                    <int id="2" val="40"/>
+                </draw-text>
+                <draw-text comment="false" x="26" y="162">
+                    <str-combine comment="false" id="0" x="0" y="0">
+                        <int id="0" val="Level: "/>
+                        <tostring comment="false" id="1" x="0" y="0">
+                            <get-game-val-5 comment="false" id="0" x="0" y="0"/>
+                        </tostring>
+                    </str-combine>
+                    <int id="1" val="480"/>
+                    <int id="2" val="60"/>
+                </draw-text>
+                <draw-text comment="false" x="26" y="197">
+                    <str-combine comment="false" id="0" x="0" y="0">
+                        <int id="0" val="Highest level: "/>
+                        <tostring comment="false" id="1" x="0" y="0">
+                            <get-game-val-6 comment="false" id="0" x="0" y="0"/>
+                        </tostring>
+                    </str-combine>
+                    <int id="1" val="480"/>
+                    <int id="2" val="80"/>
+                </draw-text>
+                <set-alpha comment="false" x="26" y="232">
+                    <int id="0" val="100"/>
+                </set-alpha>
             </group>
         </draw>
     </group>

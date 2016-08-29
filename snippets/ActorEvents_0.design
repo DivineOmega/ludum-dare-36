@@ -8,6 +8,12 @@
                         <set-game-val-3 comment="false" x="37" y="78">
                             <false comment="false" id="0" x="0" y="0"/>
                         </set-game-val-3>
+                        <set-game-val-4 comment="false" x="37" y="103">
+                            <plus comment="false" id="0" x="0" y="0">
+                                <get-game-val-4 comment="false" id="0" x="0" y="0"/>
+                                <int id="1" val="1"/>
+                            </plus>
+                        </set-game-val-4>
                     </group>
                     <more comment="false" id="0" x="0" y="0">
                         <get-xy comment="false" id="0" x="0" y="0">
@@ -19,9 +25,9 @@
                         </scene-wh>
                     </more>
                 </if>
-                <if comment="false" x="26" y="115">
+                <if comment="false" x="26" y="145">
                     <group eventID="1" id="-1">
-                        <toggle-grav comment="false" x="37" y="145">
+                        <toggle-grav comment="false" x="37" y="175">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                         </toggle-grav>
@@ -31,27 +37,27 @@
                         <true comment="false" id="1" x="0" y="0"/>
                     </eq>
                 </if>
-                <else comment="false" x="26" y="184">
+                <else comment="false" x="26" y="214">
                     <group eventID="1" id="-1">
-                        <toggle-grav comment="false" x="37" y="204">
+                        <toggle-grav comment="false" x="37" y="234">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="1"/>
                         </toggle-grav>
-                        <setav comment="false" x="37" y="231">
+                        <setav comment="false" x="37" y="261">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                         </setav>
-                        <setvel comment="false" x="37" y="258">
+                        <setvel comment="false" x="37" y="288">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                             <int id="2" val="0"/>
                         </setvel>
-                        <set-xy comment="false" x="37" y="285">
+                        <set-xy comment="false" x="37" y="315">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="1"/>
                             <int id="2" val="10"/>
                         </set-xy>
-                        <set-xy comment="false" x="37" y="312">
+                        <set-xy comment="false" x="37" y="342">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="0"/>
                             <times comment="false" id="2" x="0" y="0">

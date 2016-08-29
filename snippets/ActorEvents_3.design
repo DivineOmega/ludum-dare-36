@@ -3,12 +3,18 @@
     <group eventID="1" id="0">
         <event-mouse-enter-exit-actor comment="false" x="1" y="19">
             <group eventID="1" id="-1">
-                <set-game-val-3 comment="false" x="12" y="46">
-                    <false comment="false" id="0" x="0" y="0"/>
-                </set-game-val-3>
-                <if comment="false" x="12" y="71">
+                <if comment="false" x="12" y="46">
                     <group eventID="1" id="-1">
-                        <rotate comment="false" x="23" y="101">
+                        <stop comment="false" x="23" y="76"/>
+                    </group>
+                    <eq comment="false" id="0" x="0" y="0">
+                        <get-game-val-3 comment="false" id="0" x="0" y="0"/>
+                        <true comment="false" id="1" x="0" y="0"/>
+                    </eq>
+                </if>
+                <if comment="false" x="12" y="108">
+                    <group eventID="1" id="-1">
+                        <rotate comment="false" x="23" y="138">
                             <ACTOR eid="this" id="0"/>
                             <int id="1" val="22.5"/>
                         </rotate>
