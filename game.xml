@@ -73,11 +73,11 @@
     <attributes>
         <boolean cid="-1" id="0" name="new_bone" save="true" value="false"/>
         <boolean cid="-1" id="2" name="rotate_mode_on" save="true" value="false"/>
-        <number cid="-1" id="5" name="levels_completed" save="true" value="1"/>
-        <number cid="-1" id="6" name="highest_levels_completed" save="true" value="1"/>
+        <number cid="-1" id="5" name="levels_completed" save="true" value="1.0"/>
+        <number cid="-1" id="6" name="highest_levels_completed" save="true" value="1.0"/>
         <boolean cid="-1" id="3" name="simulation_on" save="true" value="false"/>
         <boolean cid="-1" id="1" name="drag_in_progress" save="true" value="false"/>
-        <number cid="-1" id="4" name="attempts" save="true" value="0"/>
+        <number cid="-1" id="4" name="attempts" save="true" value="1.0"/>
     </attributes>
     <collisions>
         <poly id="0" name="Square" pts="0.0,0.0#0.0,1.0#1.0,1.0#1.0,0.0"/>
